@@ -1,5 +1,5 @@
 # Data Intermediary Storage Pod
-Implementation of an open source storage pod used by a Data Intermediation Service Provider.
+Implementation of an open source storage pod used by a Data Intermediation Service Provider or a Data Altruism Organisation according to EU Data Governance Act.
 
 ## Issues
 

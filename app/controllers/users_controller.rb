@@ -315,18 +315,6 @@ class UsersController < ApplicationController
         if !meta["dlt"].nil?
             retVal["dlt"] = meta["dlt"]
         end
-        # {
-        #   "user-id": 1,
-        #   "dlt": [
-        #     {
-        #       "type": "Convex",
-        #       "network": "testnet",
-        #       "address": 48,
-        #       "public-key": "0x82AbBf6EBb20cB21dB02375270b9C2078c2e09e9D7C492be6439c61F23917022",
-        #       "balance": 96816794
-        #     }
-        #   ]
-        # }        
         render json: retVal,
                status: 200
 

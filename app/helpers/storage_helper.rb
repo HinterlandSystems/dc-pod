@@ -103,7 +103,7 @@ module StorageHelper
         case off_chain_storage
         when "Semantic Container"
             semcon_url = col_data["storage"]["url"]
-            @store.meta = meta.to_json
+            @store.meta = meta
             @store.key = Oydid.hash(Oydid.canonical(data.to_json))
             if @store.save
                 id = @store.id.to_s
@@ -116,7 +116,7 @@ module StorageHelper
                 else
                     meta["storage-response"] = response.parsed_response
                     meta["storage-response"]["semcon_url"] = semcon_url
-                    @store.meta = meta.to_json
+                    @store.meta = meta
                     if !@store.save
                         id = nil
                         errors = @store.errors
@@ -205,7 +205,7 @@ module StorageHelper
         case off_chain_storage
         when "Semantic Container"
             semcon_url = col_data["storage"]["url"]
-            @store.meta = meta.to_json
+            @store.meta = meta
             if !meta["did"].nil?
                 @store.did = meta["did"]
             end
@@ -221,7 +221,7 @@ module StorageHelper
                 else
                     meta["storage-response"] = response.parsed_response
                     meta["storage-response"]["semcon_url"] = semcon_url
-                    @store.meta = meta.to_json
+                    @store.meta = meta
                     if !@store.save
                         id = nil
                         errors = @store.errors

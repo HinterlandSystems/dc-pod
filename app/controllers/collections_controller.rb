@@ -26,7 +26,7 @@ class CollectionsController < ApplicationController
         dri = Oydid.hash(Oydid.canonical({"content": data, "meta": meta}))
         @store = Store.find_by_dri(dri)
         if @store.nil?
-            @store = Store.new(item: data.to_json, meta: meta.to_json, dri: dri, key: "col_" + doorkeeper_org)
+            @store = Store.new(item: data, meta: meta, dri: dri, key: "col_" + doorkeeper_org)
             if @store.save
                 createEvent(@store.id, CE_CREATE_COLLECTION, "create collection", {data: data, meta: meta}, doorkeeper_user)
                 retVal = {"collection-id": @store.id, "name": data["name"].to_s}
@@ -85,8 +85,8 @@ class CollectionsController < ApplicationController
         dri = Oydid.hash(Oydid.canonical({"content": data, "meta": meta}))
         if Store.find_by_dri(dri).nil?
             # update data
-            @store.item = data.to_json
-            @store.meta = meta.to_json
+            @store.item = data
+            @store.meta = meta
             @store.dri = dri
             if @store.save
                 createEvent(@store.id, CE_UPDATE_COLLECTION, "update collection", {data: data, meta: meta}, doorkeeper_user)

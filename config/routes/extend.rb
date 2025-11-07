@@ -56,9 +56,6 @@ scope '/' do
     match 'object/:id',                 to: 'objects#update', via: 'put'
     match 'object/:id',                 to: 'objects#delete', via: 'delete'
 
-    # Integration Helper
-    match 'integration/match_da',       to: 'integrations#match_da', via: 'post'
-
     draw(:extend2)
 
 end

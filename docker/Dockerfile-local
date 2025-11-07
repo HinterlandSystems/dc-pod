@@ -9,9 +9,10 @@ RUN apt-get update && \
 	apt -y install nodejs && \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN npm init -y && npm i web3@1.10.0
-
+COPY docker/local-gem/*.gem /tmp/
 COPY Gemfile.extend .
-RUN bundle install && \
+RUN gem install /tmp/*.gem && \
+	bundle install && \
 	bundle update && \
 	gem cleanup semcon
 COPY . .

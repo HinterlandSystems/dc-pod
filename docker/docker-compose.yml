@@ -47,7 +47,7 @@ services:
       DB_NAME: babelfish
       DB_USER: postgres
       DB_PASSWORD: postgres
-      RAILS_CONFIG_HOSTS: "babelfish.ngi.eu"
+      RAILS_CONFIG_HOSTS: "example.com"
       DEFAULT_DID_OAUTH_APP: "oydid"
       DEFAULT_VC_OAUTH_APP: "oydid-vc"
 
