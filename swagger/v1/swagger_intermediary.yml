@@ -1,16 +1,16 @@
 openapi: 3.0.1
 info:
-  title: Data Intermediary APIs
+  title: Data Altruism Organisation APIs
   description: >-
-    API Endpoints for data intermediary component.
+    API Endpoints for Data Altruism Organisation DAO component.
   contact:
-    email: office@ownyourdata.eu
+    email: board@hinterland.systems
   license:
     name: MIT License
     url: 'https://opensource.org/licenses/MIT'
   version: v1.0
 servers:
-  - description: DPP-CRC Instance
+  - description: DAO Instance
     url: https://concrete.go-data.at
   - url: /
 components:
